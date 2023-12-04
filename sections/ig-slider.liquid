@@ -1,0 +1,227 @@
+{{ 'ig-slider.css' | asset_url | stylesheet_tag }}
+
+<style>
+  #shopify-section-{{section.id}} .ig-slider-wrapper .ig-slider-image-wrapper {
+    border: 2px solid {{ section.settings.border_color }};
+  }
+
+  #shopify-section-{{section.id}} .ig-slider-modal {
+    background-color: {{ section.settings.video_background | color_modify: 'alpha', 0.75 }};
+  }
+
+  #shopify-section-{{section.id}} .ig-slider-modal-close {
+    color: {{ section.settings.video_popup_close }};
+  }
+
+  #shopify-section-{{section.id}} .ig-slider-modal video {
+    border-radius: {{ section.settings.video_radius }}px;
+  }
+
+  #shopify-section-{{section.id}} .ig-slider-modal-button {
+    color: {{ section.settings.button_text_color }};
+    background-color: {{ section.settings.button_bg_color }};
+  }
+
+  
+</style>
+
+<div class="section-template--{{ section.id }} ig-slider-wrapper">
+  {% for block in section.blocks %}
+    {% case block.type %}
+      {% when 'product_item' %}
+        <a class="ig-slider-product-item" id="ig-slider-item-{{block.id}}" href="{{ block.settings.url }}">
+          <div class="ig-slider-image-wrapper">
+            {% if block.settings.image %}
+              <img
+                class="ig-slider-image"
+                src="{{ block.settings.image | img_url: 'master'}}"
+                style="background: white;border: solid white 2px">
+            {% else %}
+              <img
+                class="ig-slider-image"
+                src="{{ 'img_hero_square.png' | asset_url}}"
+                style="
+                          background: white;
+                border: solid white 2px
+              ">
+            {% endif %}
+            {% if block.settings.tag != 'no_tag' %}
+              <button>{{ block.settings.tag }}</button>
+            {% endif %}
+          </div>
+
+          <span class="ig-slider-title">{{ block.settings.title }}</span>
+        </a>
+    {% endcase %}
+    <style>
+    #shopify-section-{{section.id}} #ig-slider-item-{{block.id}} button {
+    background: {{block.settings.tag_color}};
+  }
+  </style>
+  {% endfor %}
+
+{% comment %} <div class="ig-slider-modal">
+      <div class="width">
+        <div class="ig-slider-modal-inner">
+          <button class="ig-slider-modal-close">{% render 'icon-close' %}</button>
+          <video
+            playsinline
+            preload="none"
+            controls
+          >
+            <source src="" type="video/mp4">
+          </video>
+          <div class="ig-slider-modal-button-container">
+            <a class="ig-slider-modal-button" href="{{ section.settings.button_link_to }}">
+              {{- section.settings.button_title -}}
+            </a>
+          </div>
+        </div>
+    </div> {% endcomment %}
+</div></div>{% schema %}
+{
+  "name": "IG Slider",
+  "class": "ig-slider",
+  "disabled_on": {
+    "templates": [
+      "404",
+      "cart",
+      "checkpoint",
+      "gift_card",
+      "list-collections",
+      "password",
+      "queue",
+      "search",
+      "article",
+      "blog",
+      "collection",
+      "page",
+      "product",
+      "metaobject",
+      "customers/account",
+      "customers/activate_account",
+      "customers/addresses",
+      "customers/login",
+      "customers/order",
+      "customers/register",
+      "customers/reset_password"
+    ],
+    "groups": ["header", "footer", "aside"]
+  },
+  "settings": [
+    {
+      "type": "color",
+      "id": "border_color",
+      "default": "#1D89EF",
+      "label": "Border Color"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product_item",
+      "name": "Product",
+      "settings": [
+        {
+          "label": "Image",
+          "id": "image",
+          "type": "image_picker"
+        },
+        {
+          "label": "Label",
+          "id": "title",
+          "type": "text",
+          "default": "Product Title"
+        },
+        {
+          "label": "Url",
+          "id": "url",
+          "type": "url"
+        },
+        {
+          "label": "Tag",
+          "id": "tag",
+          "type": "select",
+          "options": [
+            {
+              "value": "no_tag",
+              "label": "None"
+            },
+            {
+              "value": "new",
+              "label": "New"
+            },
+            {
+              "value": "sale",
+              "label": "Sale"
+            },
+            {
+              "value": "bfcm",
+              "label": "BFCM"
+            }
+          ],
+          "default": "no_tag"
+        },
+        {
+          "type": "color",
+          "id": "tag_color",
+          "label": "Tag Color",
+          "default": "#1D89EF"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "IG Slider",
+      "blocks": [
+        {
+          "type": "product_item"
+        },
+        {
+          "type": "product_item"
+        },
+        {
+          "type": "product_item"
+        },
+        {
+          "type": "product_item"
+        },
+        {
+          "type": "product_item"
+        }
+      ]
+    }
+  ]
+}{% endschema %}<script>
+  let sectionId = '{{ section.id }}';
+  document.querySelectorAll('.section-template--' + sectionId + ' .ig-slider-video-item').forEach((item, i) => {
+    item.addEventListener('click', () => {
+      let sourceLinks = item.querySelectorAll('input.ig-slider-video-item-source');
+      var videoUrl = '';
+      sourceLinks.forEach((link) => {
+        let videoSource = link.value;
+        let formattedVideoSource = videoSource.split('###');
+        if (formattedVideoSource.length > 1 && formattedVideoSource[1] == 'video/mp4') {
+          videoUrl = formattedVideoSource[0];
+        }
+      });
+
+      const modal = document.querySelector('.section-template--' + sectionId + ' .ig-slider-modal');
+      const video = modal.querySelector('video');
+      const source = video.querySelector('source');
+      source.src = videoUrl;
+      video.load();
+      modal.classList.add('ig-slider-modal--active');
+      video.play();
+    });
+  });
+
+  document
+    .querySelector('.section-template--' + sectionId + ' .ig-slider-modal .ig-slider-modal-close')
+    .addEventListener('click', function () {
+      const videoModal = document.querySelector('.section-template--' + sectionId + ' .ig-slider-modal');
+      const video = videoModal.querySelector('video');
+      video.pause();
+      videoModal.classList.remove('ig-slider-modal--active');
+    });
+</script>

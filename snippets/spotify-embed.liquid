@@ -1,0 +1,95 @@
+<div style="height:0;width:0;opacity:0">
+  <div
+    class="spotify-embed-iframe"
+    data-blockid="{{block.id}}"
+    data-spotifyid="{{spotify_id}}"></div>
+</div>
+<div class="circle-container-outer">
+  <div
+    class="circle-container"
+    id="play-button-{{block.id}}"
+    style="background-color: {{block.settings.play_button_color}};">
+    <svg
+      class="centered-svg shadow"
+      viewBox="-3 0 28 28"
+      style="margin-left:3px"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
+      fill="#ffffff"
+      stroke="#ffffff">
+      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+      <g
+        id="SVGRepo_tracerCarrier"
+        stroke-linecap="round"
+        stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
+      <title>play</title>
+      <desc>Created with Sketch Beta.</desc>
+      <defs></defs>
+      <g
+        id="Page-1"
+        stroke="none"
+        stroke-width="1"
+        fill="none"
+        fill-rule="evenodd"
+        sketch:type="MSPage">
+      <g
+        id="Icon-Set-Filled"
+        sketch:type="MSLayerGroup"
+        transform="translate(-419.000000, -571.000000)"
+        fill="#ffffff">
+        <path
+          d="M440.415,583.554 L421.418,571.311 C420.291,570.704 419,570.767 419,572.946 L419,597.054 C419,599.046 420.385,599.36 421.418,598.689 L440.415,586.446 C441.197,585.647 441.197,584.353 440.415,583.554"
+          id="play"
+          sketch:type="MSShapeGroup"></path>
+      </g>
+    </g>
+  </g>
+</svg>
+<svg
+  class="centered-svg shadow"
+  style="margin-left:0px"
+  xmlns="http://www.w3.org/2000/svg"
+  height="1em"
+  viewBox="0 0 320 512">
+  <style>
+    svg {
+      fill: #ffffff
+    }
+  </style><path d="M48 64C21.5 64 0 85.5 0 112V400c0 26.5 21.5 48 48 48H80c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48H48zm192 0c-26.5 0-48 21.5-48 48V400c0 26.5 21.5 48 48 48h32c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48H240z" /></svg></div><div class="artist-creds">
+<p style="color:{{ block.settings.creds_color }}">{{ block.settings.song_name }}</p>
+<p style="color:{{ block.settings.creds_color }}">{{ block.settings.artist_name }}</p></div></div><script>
+  window.onSpotifyIframeApiReady = (IFrameAPI) => {
+  const elements = document.querySelectorAll('.spotify-embed-iframe').forEach((element) => {
+    const options = {
+      uri: `spotify:track:${element.dataset.spotifyid}`
+    };
+    const callback = (EmbedController) => {
+    let blockid = element.dataset.blockid;
+    document.getElementById(`play-button-${blockid}`).addEventListener('click', (e) => {
+      EmbedController.togglePlay();
+    });
+
+    document.addEventListener('slideChange', (e) => {
+        EmbedController.pause();
+    });
+
+    EmbedController.addListener('playback_update', e => {
+      if (e.data.isPaused) {
+        document.getElementById(`play-button-${blockid}`).classList.remove('playing');
+      } else if (e.data.duration == e.data.position) {
+        document.getElementById(`play-button-${blockid}`).classList.remove('playing');
+      } else {
+        document.getElementById(`play-button-${blockid}`).classList.add('playing');
+      }
+  });
+
+
+  };
+  IFrameAPI.createController(element, options, callback);
+  window.swipers['{{section.id}}'].update();
+});
+
+};
+</script>

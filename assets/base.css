@@ -3499,3 +3499,13 @@ details-disclosure > details {
     --border-offset: 0px; /* Prevent the border from growing on buttons when this effect is on. */
   }
 }
+
+h1, h2, h3, h4, h5, .h0, .h1, .h2, .h3, .h4, .h5 {
+  letter-spacing: normal;
+  line-height: normal;
+}
+
+body {
+  letter-spacing: normal;
+  line-height: normal;
+}

@@ -1,0 +1,214 @@
+{% if section.settings.desktop_text_position == 'right' %}
+  {% assign cls1 = 'hero-classic--desktop-text-right' %}
+{% endif %}
+
+{% if section.settings.mobile_text_position == 'top' %}
+  {% assign cls2 = 'hero-classic--mobile-text-top' %}
+{% endif %}
+
+{{ 'swiper-add.css' | asset_url | stylesheet_tag }}
+{% render 'hero-slider' slide_style: section.settings.slide_style %}
+
+<div class="hero-slider swiper">
+  <div class="swiper-wrapper">
+    {%- for block in section.blocks -%}
+      {% if block.type == 'slide-single' %}
+        <div class="swiper-slide">
+          <a href="{{ block.settings.link_to }}" class="slide-link">
+            {% if block.settings.mobile == blank %}
+              <img class="swiper-img-mobile" src="{{ 'img_hero_mobile.png' | asset_url }}">
+            {% else %}
+              <img class="swiper-img-mobile" src="{{ block.settings.mobile | img_url: 'master' }}">
+            {% endif %}
+
+            {% if block.settings.desktop == blank %}
+              <img class="swiper-img-desktop" src="{{ 'img_hero_desktop.png' | asset_url }}">
+            {% else %}
+              <img class="swiper-img-desktop" src="{{ block.settings.desktop | img_url: 'master' }}">
+            {% endif %}
+          </a>
+          {% if block.settings.music_link %}
+            {% assign spotify_id = block.settings.music_link | split: "track/" | last | split: "?" | first %}
+            {% render 'spotify-embed' spotify_id: spotify_id
+              , block: block %}
+          {% endif %}
+        </div>
+      {% elsif block.type == 'slide-single-video' %}
+        <div class="swiper-slide">
+          <div class="hero-classic-slider-items swiper-slide swiper-slide-video" style="height:inherit">
+            {% if block.settings.mobile_video != blank %}
+              {% assign plyr_id = section.id | append: '-' | append: forloop.index0 %}
+              <div style="border-radius: 20px;overflow: hidden;height:inherit">
+                {{ block.settings.mobile_video | video_tag: autoplay: true, loop: true, controls: true, id: plyr_id, class: 'hero-classic-mobile' }}
+              </div>
+            {% comment %} {% render 'set-up-plyr' plyr_id: plyr_id %} {% endcomment %}
+            {% else %}
+              <img class="hero-classic-mobile" src="{{ block.settings.mobile | img_url: 'master' }}">
+            {% endif %}
+
+            {% if block.settings.desktop_video == blank %}
+              <img class="hero-classic-desktop" src="{{ 'img_hero_desktop.png' | asset_url }}">
+            {% else %}
+              <img class="hero-classic-desktop" src="{{ block.settings.desktop | img_url: 'master' }}">
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Hero Slider",
+    "disabled_on": {
+      "groups": ["header", "footer", "aside"]
+    },
+    "settings": [
+      {
+        "type": "select",
+        "id": "slide_style",
+        "label": "Slide Style",
+        "options": [
+          {
+            "value": "cards",
+            "label": "Cards"
+          },
+          {
+            "value": "fw",
+            "label": "Full Width"
+          }
+        ],
+        "default": "fw"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Image Slide",
+        "type": "slide-single",
+        "settings": [
+          {
+            "type": "header",
+            "content": "Image"
+          },
+          {
+            "label": "Desktop background",
+            "id": "desktop",
+            "type": "image_picker"
+          },
+          {
+            "label": "Mobile background",
+            "id": "mobile",
+            "type": "image_picker"
+          },
+          {
+            "type": "url",
+            "id": "link_to",
+            "label": "Link To"
+          },
+          {
+            "type": "url",
+            "id": "music_link",
+            "label": "Spotify Link"
+          },
+          {
+            "type": "text",
+            "id": "song_name",
+            "label": "Song Name"
+          },
+          {
+            "type": "text",
+            "id": "artist_name",
+            "label": "Artist Name"
+          },
+          {
+            "type": "select",
+            "id": "creds_color",
+            "label": "Song Credits Color",
+            "options": [
+              {
+                "value": "white",
+                "label": "White"
+              },
+              {
+                "value": "black",
+                "label": "Black"
+              }
+            ],
+            "default": "black"
+          },
+          {
+            "type": "color",
+            "id": "play_button_color",
+            "label": "Play Button Color",
+            "default": "#1d89ef"
+          }
+        ]
+      },
+      {
+        "name": "Video Card",
+        "type": "slide-single-video",
+        "settings": [
+          {
+            "type": "header",
+            "content": "Image"
+          },
+          {
+            "label": "Desktop Video (alternate to image)",
+            "id": "desktop_video",
+            "type": "video"
+          },
+          {
+            "label": "Mobile Video (alternate to image)",
+            "id": "mobile_video",
+            "type": "video"
+          },
+          {
+            "type": "url",
+            "id": "link_to",
+            "label": "Link To"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Hero Slide",
+        "blocks": [
+          {
+            "type": "slide-single"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const swiper = new Swiper('.swiper', {
+        direction: 'horizontal',
+        autoHeight: true,
+        // loop: true,
+        {% unless section.settings.slide_style == 'fw' %}
+        spaceBetween: 10,
+        slidesPerView: 1.1,
+        {% endunless %}
+        centeredSlides: true,
+      });
+      document.querySelectorAll('.swiper-slide').forEach((slide, index) => {
+        slide.style.marginLeft = '0px';
+      })
+    
+    //   swiper.on('slideChange', function (e) {
+    //   var event = new CustomEvent("slideChange", {eventData: e});
+    //   document.dispatchEvent(event);
+    //   // get previous slide
+    //   window.plyrs[`{{ section.id }}-${e.previousIndex}`]?.pause()
+    //   // Dispatch/Trigger/Fire the event
+    //   var previousSlideElement = this.slides[this.previousIndex];
+    //   });
+    
+    window.swipers = window.swipers || {};
+    window.swipers[`{{ section.id }}`] = swiper;
+    });
+</script>

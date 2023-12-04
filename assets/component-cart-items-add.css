@@ -1,0 +1,12 @@
+.cart-remove-button.button {
+    background: #efefef;
+    color: #000;
+    max-height: 30px!important;
+    min-height: 30px;
+    border-radius: 6px;
+}
+
+.cart-item__quantity-wrapper {
+    justify-content: space-between;
+    align-items: center;
+}

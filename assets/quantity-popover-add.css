@@ -1,0 +1,25 @@
+.quantity:after {
+    box-shadow: none;
+}
+
+quantity-input.quantity {
+    border: solid 2px #efefef;
+    border-radius: 6px;
+}
+
+quantity-input button:first-child {
+    border-right: solid 2px #efefef;
+}
+
+quantity-input button.quantity__button:last-child {
+    border-left: solid 2px #efefef;
+}
+
+quantity-input button.quantity__button:first-child {
+    border-right: solid 2px #efefef;
+    border-left: none;
+}
+
+.quantity {
+    min-height: 3rem;
+}

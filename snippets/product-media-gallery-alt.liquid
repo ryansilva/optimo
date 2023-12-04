@@ -1,0 +1,328 @@
+<style>
+
+  .width {
+    max-width: var(--page_width);
+    margin: 0 auto;
+    width: calc(100% - 32px);
+  }
+
+  @media (min-width: 960px) {
+    .width {
+      width: calc(100% - 80px);
+    }
+  }
+  .product-main-content-faq-popup {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  .product-main-content-faq-popup {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2147483647;
+    display: flex;
+    left: -9999px;
+    transition: var(--fadeOff);
+    opacity: 0;
+  }
+
+  .product-main-content-faq-popup > div {
+    position: relative;
+  }
+  .free-shipping--content {
+    color: #FF009D;
+  }
+  .product-main-content-faq-popup--active {
+    transition: var(--fadeOn);
+    left: 0;
+    opacity: 1;
+  }
+  .product-main-content-faq-popup > div > div {
+    background: white;
+    height: 80%;
+    padding: 24px;
+    top: 10%;
+    position: absolute;
+    width: 100%;
+    border-radius: 12px;
+  }
+  .modal-content {
+    height: 90%;
+    overflow-y: auto;
+    padding: 0 24px;
+    top: 40px;
+    position: absolute;
+    left: 0;
+    border-radius: 12px;
+  }
+  .product-main-content-faq-popup-close {
+    position: absolute !important;
+    right: 8px;
+    top: calc(10% + 8px) !important;
+    z-index: 2;
+    width: 20px !important;
+    height: 20px !important;
+  }
+  .product-main-content-faq-popup-close svg {
+    height: 40px;
+    width: 40px;
+    right: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .swiper-pagination-bullet {
+    width: 6px !important;
+    height: 6px !important;
+  }
+  .swiper {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 7px;
+  }
+
+
+  .swiper-pagination-bullet {
+    background: #fafafa !important;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: #fafafa !important;
+  }
+
+  .swiper-slide {
+
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .swiper-slide video {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    max-height: 60vh;
+  }
+
+  .swiper {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .swiper-slide {
+    background-size: cover;
+    background-position: center;
+  }
+
+  .main-swiper {
+    width: 100%;
+  }
+  .swiper,
+  .swiper-wrapper,
+  .swiper-slide {
+    background-color: black;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 0;
+  }
+
+  @media (min-width: 960px) {
+    .swiper,
+    .swiper-wrapper,
+    .swiper-slide{
+      height: 400px;
+    }
+    
+    .swiper-slide img {
+      border-radius: var(--image_radius);
+    }
+  }
+  @media all and (max-width: 749px) {
+    #MainProduct-{{ section.id }} .product__media-wrapper {
+      max-width: calc(100% + 30px);
+      width: calc(100% + 30px);
+      margin-left: -15px;
+    }
+  }
+
+
+  .swiper-slide-video {
+    background: black;
+  }
+
+  .swiper-icons {
+    display: none;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    z-index: 10;
+    margin-bottom: 10px;
+    margin-right: 10px;
+  }
+
+  .swiper-icons .swiper-icon {
+    height: 30px;
+    width: 30px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 11px;
+    color: white;
+    font-weight: bold;
+  }
+
+  .swiper-icons .swiper-icon:first-child {
+    margin-bottom: 10px;
+  }
+
+
+  .swiper-slide-video .plyr .plyr__poster {
+    background-size: cover;
+    background-position: center;
+
+  }
+
+  .swiper-slide-video .plyr--video .plyr__controls {
+    padding-bottom: 22px;
+    justify-content: flex-start;
+  }
+
+  .swiper-slide-video .plyr--video button.plyr__controls__item.plyr__control {
+    padding: 0;
+    margin-left: 15px;
+  }
+
+  .swiper-slide-video .plyr--video .plyr__controls__item.plyr__volume button.plyr__control {
+    padding: 0;
+    background: none;
+  }
+
+  .plyr {
+    --plyr-color-main: transparent;
+  }
+
+  .plyr .plyr__controls > *:last-child {
+    margin-right: 15px;
+  }
+</style>
+
+<div class="product-main-images " data-aos="fade-zoom-in">
+  <div class="swiper main-swiper">
+    <div class="swiper-wrapper" style="position:relative">
+      {% for media in variant_media %}
+        <div class="swiper-slide swiper-slide-video">
+          {% case media.media_type %}
+            {% when 'image' %}
+              <img src="{{ media | img_url: '900x900' }}" />
+            {% when 'video' %}
+              {% assign plyr_id = section.id | append: '-' | append: forloop.index0 %}
+              <div style="overflow: hidden;width:100%">
+                {{ media | video_tag: autoplay: false, loop: true, controls: false, id: plyr_id, class: 'hero-classic-mobile' }}
+              </div>
+          {% endcase %}
+        </div>
+      {% endfor %}
+    </div>
+    <div class="swiper-icons">
+      <div class="swiper-icon">
+        <a class="product-main-image-icons-faq">
+          FAQ
+        </a>
+      </div>
+      <div class="swiper-icon">
+
+        <a class="product-main-image-icons-rol">
+          ROL
+        </a>
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+  <div class="product-main-content-faq-popup">
+    <div class="width">
+      <div class="product-main-content-faq-popup-close">{% render 'icon-close' %}</div>
+      <div>
+        <div class='modal-content'>CONTENT</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    $(".product-main-content > div:nth-child(3) > .product-main-collapsable-header").trigger("click");
+    $(".product-main-image-icons-faq").click(function(e) {
+      e.preventDefault();
+      console.log('faq clicked!!!!');
+      $(".product-main-content-faq-popup").addClass("product-main-content-faq-popup--active");
+    });
+    $(".product-main-image-icons-rol").click(function(e) {
+      e.preventDefault();
+      $(".product-main-content-faq-popup").addClass("product-main-content-faq-popup--active");
+    });
+    $(".product-main-content-faq-popup-close").click(function(e) {
+      $(".product-main-content-faq-popup").removeClass("product-main-content-faq-popup--active");
+    })
+  });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    // Initialize Plyr instances for each video
+  const players = {};
+  
+      
+  document.querySelectorAll('.swiper-slide-video video').forEach((video, index) => {
+    const player = new Plyr(video, {
+      controls: ['play'],
+      autoplay: false,
+      loop: true,
+      hideControls: false,
+      muted: true,
+      loop: { active: true },
+    });
+    players[video.id] = player;
+  });
+  
+  // Function to pause all videos
+  const pauseAllVideos = () => {
+    Object.values(players).forEach(player => player.pause());
+  };
+    // Initialize Swiper
+  const mainSwiper = new Swiper('.main-swiper', {
+    direction: 'horizontal',
+    slidesPerView: 1,
+    autoHeight: true,
+    pagination: {
+      el: ".swiper-pagination",
+      dynamicBullets: false,
+      dynamicMainBullets: 1
+    },
+    on: {
+      slideChange: () => {
+        pauseAllVideos();
+        const currentSlide = mainSwiper.slides[mainSwiper.activeIndex];
+        const currentVideo = currentSlide.querySelector('video');
+        if (currentVideo && players[currentVideo.id]) {
+          players[currentVideo.id].play();
+        }
+      }
+    }
+  });
+    });
+</script>

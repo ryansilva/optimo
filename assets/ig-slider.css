@@ -1,0 +1,140 @@
+.ig-slider {
+  display: block;
+}
+.ig-slider {
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#f1f1f1),
+    color-stop(4%, #fafafa),
+    color-stop(100%, #ffffff),
+    to(#ffffff)
+  );
+}
+@media (min-width: 576px) {
+  .ig-slider {
+    display: none;
+  }
+}
+
+.ig-slider-wrapper {
+  overflow-x: auto;
+  white-space: nowrap;
+  padding-top: 12px;
+  padding-bottom: 4px;
+  line-height: 1.2;
+}
+
+.ig-slider-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.ig-slider-wrapper > .ig-slider-video-item,
+.ig-slider-wrapper > .ig-slider-product-item {
+  text-align: center;
+  overflow-x: hidden;
+  display: inline-block;
+  color: var(--text_color);
+  width: 20.49%;
+}
+
+@media (min-width: 576px) {
+  .ig-slider-wrapper {
+    display: flex;
+    width: 100%;
+  }
+
+  .ig-slider-wrapper > .ig-slider-video-item,
+  .ig-slider-wrapper > .ig-slider-product-item {
+    flex: 1;
+  }
+}
+
+.ig-slider-wrapper > .ig-slider-video-item:first-child,
+.ig-slider-wrapper > .ig-slider-product-item:first-child {
+  margin-left: 15px;
+}
+
+.ig-slider-wrapper .ig-slider-image-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 79px;
+  max-height: 79px;
+  margin: 0 auto;
+  border-radius: 50%;
+  overflow: visible;
+  border-style: solid;
+  color: #fff;
+  position: relative;
+}
+.ig-slider-wrapper .ig-slider-image-wrapper button {
+  position: absolute;
+  bottom: -5px;
+  font-size: 9px;
+  color: white;
+  padding: 2px;
+  border: solid white 3px;
+  border-radius: 6px;
+  padding-top: 2px;
+  text-transform: uppercase;
+}
+
+.ig-slider-wrapper .ig-slider-image-wrapper > .ig-slider-image {
+  border-radius: 100px;
+  width: 100%;
+  object-fit: cover;
+  height: 76px;
+}
+
+.ig-slider-wrapper .ig-slider-image-wrapper > svg {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+}
+
+.ig-slider-wrapper .ig-slider-title {
+  font-size: 10px;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  margin-top: 6px;
+  display: inline-block;
+  letter-spacing: normal;
+  font-weight: 400;
+}
+
+.ig-slider-video-item svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.ig-slider-modal > div.width {
+  position: relative;
+}
+
+.ig-slider-modal-inner {
+  position: absolute;
+  top: 46%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+}
+
+.ig-slider-modal-button-container {
+  width: 100%;
+  text-align: center;
+}
+
+.ig-slider-modal-button {
+  display: inline-block;
+  padding: 8px;
+  width: 60%;
+  text-align: center;
+  margin: auto;
+  margin-top: 18px;
+  border-radius: 4px;
+  font-size: 18px;
+}

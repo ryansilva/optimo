@@ -1,0 +1,12 @@
+.card-information .price {
+    font-size: 12px;
+    font-weight: 200;
+}
+
+.card__information .full-unstyled-link{
+    font-weight: 600;
+}
+
+.card--standard .card__inner {
+    border: solid .5px #dfdfdf;
+}

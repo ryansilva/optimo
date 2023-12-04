@@ -1,0 +1,29 @@
+img.swiper-img-mobile {
+  width: 100%;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+img.swiper-img-desktop {
+  width: 100%;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+@media (max-width: 599px) {
+  img.swiper-img-mobile {
+    display: block;
+  }
+  img.swiper-img-desktop {
+    display: none;
+  }
+}
+
+@media (min-width: 599px) {
+  img.swiper-img-mobile {
+    display: none;
+  }
+  img.swiper-img-desktop {
+    display: block;
+  }
+}

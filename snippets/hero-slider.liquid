@@ -1,0 +1,74 @@
+<style>
+  {% unless slide_style == 'fw' %}
+    /* Swiper */
+    #shopify-section-{{section.id}} .hero-slider.swiper .swiper-slide {
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    #shopify-section-{{section.id}} .hero-slider.swiper .swiper-slide {
+      border-radius: 20px;
+      max-width: calc(340vw / 375 * 100);
+      margin-left: calc(17vw / 375 * 100);
+    }
+  {% endunless %}
+
+  /* Spotify */
+  .circle-container {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    /* This makes the div a circle */
+    display: flex;
+    /* Using Flexbox to center the SVG */
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .circle-container-outer {
+    position: absolute;
+    left: 20px;
+    top: 21px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .circle-container-outer .artist-creds {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .circle-container-outer .artist-creds p {
+    font-size: 12px;
+    line-height: 12px;
+    margin: 0;
+  }
+
+  .circle-container-outer .artist-creds p:first-child {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: normal;
+  }
+
+  .circle-container svg:nth-child(2) {
+    display: none;
+  }
+
+  .circle-container.playing svg:nth-child(1) {
+    display: none;
+  }
+
+  .circle-container.playing svg:nth-child(2) {
+    display: block;
+  }
+
+  .centered-svg {
+    width: 38%;
+    /* Adjust this value as needed */
+    height: 38%;
+    /* Adjust this value as needed */
+  }
+
+</style>
