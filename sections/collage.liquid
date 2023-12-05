@@ -6,22 +6,22 @@
 
 {%- style -%}
   .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    padding-top: {{ 60 | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ 60 | times: 0.75 | round: 0 }}px;
   }
 
   @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
+      padding-top: 60px;
+      padding-bottom: 60px;
     }
   }
 {%- endstyle -%}
 
-<div class="color-{{ section.settings.color_scheme }} gradient isolate">
+<div class="color-background-1 gradient isolate">
   <div class="page-width section-{{ section.id }}-padding">
     {%- if section.settings.heading != blank -%}
-      <h2 class="collage-wrapper-title inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+      <h2 class="collage-wrapper-title inline-richtext h1 scroll-trigger animate--slide-in">
         {{ section.settings.heading }}
       </h2>
     {%- endif -%}
@@ -38,7 +38,7 @@
           {%- assign placeholder_image_index = forloop.index0 | modulo: 4 | plus: 1 -%}
           {%- case block.type -%}
             {%- when 'image' -%}
-              <div class="collage-card {% if section.settings.card_styles == 'none' %}global-media-settings{% else %}card-wrapper {{ section.settings.card_styles }} color-{{ settings.card_color_scheme }} gradient{% endif %}">
+              <div class="collage-card card-wrapper product-card-wrapper color-{{ settings.card_color_scheme }} gradient">
                 <div
                   class="media media--transparent ratio"
                   {% if block.settings.image != blank %}
@@ -106,11 +106,11 @@
                 media_aspect_ratio: 'adapt',
                 columns: 2,
                 extend_height: true,
-                wrapper_class: section.settings.card_styles,
+                wrapper_class: 'product-card-wrapper',
                 placeholder_image: placeholder_image
               %}
             {%- when 'video' -%}
-              <div class="collage-card {% if section.settings.card_styles == 'none' %}global-media-settings{% else %}{{ section.settings.card_styles }} color-{{ settings.card_color_scheme }} gradient{% endif %}">
+              <div class="collage-card product-card-wrapper color-{{ settings.card_color_scheme }} gradient">
                 <noscript>
                   <a
                     href="{{ block.settings.video_url }}"
@@ -250,35 +250,37 @@
   "tag": "section",
   "class": "section",
   "disabled_on": {
-      "templates": ["404", "cart", "checkpoint", "gift_card", "list-collections", "password", "queue", "search", "article", "blog", "collection", "page", "product", "metaobject", "customers/account", "customers/activate_account", "customers/addresses", "customers/login", "customers/order", "customers/register", "customers/reset_password", "index"],
-      "groups": ["header", "footer", "aside"]
-    },
+    "templates": [
+      "404",
+      "cart",
+      "checkpoint",
+      "gift_card",
+      "list-collections",
+      "password",
+      "queue",
+      "search",
+      "article",
+      "blog",
+      "collection",
+      "product",
+      "metaobject",
+      "customers/account",
+      "customers/activate_account",
+      "customers/addresses",
+      "customers/login",
+      "customers/order",
+      "customers/register",
+      "customers/reset_password",
+      "index"
+    ],
+    "groups": ["header", "footer", "aside"]
+  },
   "settings": [
     {
       "type": "inline_richtext",
       "id": "heading",
       "default": "Multimedia collage",
       "label": "t:sections.collage.settings.heading.label"
-    },
-    {
-      "type": "select",
-      "id": "heading_size",
-      "options": [
-        {
-          "value": "h2",
-          "label": "t:sections.all.heading_size.options__1.label"
-        },
-        {
-          "value": "h1",
-          "label": "t:sections.all.heading_size.options__2.label"
-        },
-        {
-          "value": "h0",
-          "label": "t:sections.all.heading_size.options__3.label"
-        }
-      ],
-      "default": "h1",
-      "label": "t:sections.all.heading_size.label"
     },
     {
       "type": "select",
@@ -311,54 +313,6 @@
       ],
       "default": "column",
       "label": "t:sections.collage.settings.mobile_layout.label"
-    },
-    {
-      "type": "select",
-      "id": "card_styles",
-      "options": [
-        {
-          "value": "none",
-          "label": "t:sections.collage.settings.card_styles.options__1.label"
-        },
-        {
-          "value": "product-card-wrapper",
-          "label": "t:sections.collage.settings.card_styles.options__2.label"
-        }
-      ],
-      "default": "product-card-wrapper",
-      "info": "t:sections.collage.settings.card_styles.info",
-      "label": "t:sections.collage.settings.card_styles.label"
-    },
-    {
-      "type": "color_scheme",
-      "id": "color_scheme",
-      "label": "t:sections.all.colors.label",
-      "info": "t:sections.all.colors.has_cards_info",
-      "default": "background-1"
-    },
-    {
-      "type": "header",
-      "content": "t:sections.all.padding.section_padding_heading"
-    },
-    {
-      "type": "range",
-      "id": "padding_top",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_top",
-      "default": 36
-    },
-    {
-      "type": "range",
-      "id": "padding_bottom",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_bottom",
-      "default": 36
     }
   ],
   "blocks": [
