@@ -1,1 +1,143 @@
-{"sections":{"ig-slider":{"type":"ig-slider","blocks":{"04c6c3b9-34f9-4958-bf57-bb6158c6ce78":{"type":"product_item","settings":{"image":"shopify:\/\/shop_images\/37_31_ba0281f0-606a-4b37-ad02-5d398a0b3ef5.png","title":"Product Title","url":"","tag":"sale","tag_color":"#ef1d68"}},"635ad0db-854a-48bf-94b8-da06bf2f0642":{"type":"product_item","settings":{"image":"shopify:\/\/shop_images\/37_31_ba0281f0-606a-4b37-ad02-5d398a0b3ef5.png","title":"Product Title","url":"","tag":"new","tag_color":"#ef1d68"}},"94fd54e7-ef92-46e1-ba57-d5c14b4cd17a":{"type":"product_item","settings":{"image":"shopify:\/\/shop_images\/37_31_ba0281f0-606a-4b37-ad02-5d398a0b3ef5.png","title":"Product Title","url":"","tag":"no_tag","tag_color":"#1d89ef"}},"ac6d7259-5d5b-4919-ae2b-e2c5d38439c5":{"type":"product_item","settings":{"image":"shopify:\/\/shop_images\/37_31_ba0281f0-606a-4b37-ad02-5d398a0b3ef5.png","title":"Product Title","url":"","tag":"no_tag","tag_color":"#1d89ef"}},"cea94c5f-9c30-4567-b90d-46ff76318159":{"type":"product_item","settings":{"image":"shopify:\/\/shop_images\/37_31_ba0281f0-606a-4b37-ad02-5d398a0b3ef5.png","title":"Product Title","url":"","tag":"no_tag","tag_color":"#1d89ef"}}},"block_order":["04c6c3b9-34f9-4958-bf57-bb6158c6ce78","635ad0db-854a-48bf-94b8-da06bf2f0642","94fd54e7-ef92-46e1-ba57-d5c14b4cd17a","ac6d7259-5d5b-4919-ae2b-e2c5d38439c5","cea94c5f-9c30-4567-b90d-46ff76318159"],"settings":{"border_color":"#ef1d68"}},"hero-slider":{"type":"hero-slider","blocks":{"9b92882d-9439-4fbd-94b3-28365ecc055b":{"type":"slide-single","settings":{"desktop":"shopify:\/\/shop_images\/No_Strings_Attached_17_c8748afd-12f0-48c2-b0d2-7b739256843b.png","mobile":"shopify:\/\/shop_images\/37_600_x_1000_px_3_4ed8e919-34ec-4c6e-9d36-88bd8323c293.png","link_to":"","music_link":"","song_name":"","artist_name":"","creds_color":"black","play_button_color":"#1d89ef"}},"d76ab0c4-f98c-4c84-9eb9-a2046cc32293":{"type":"slide-single","settings":{"desktop":"shopify:\/\/shop_images\/No_Strings_Attached_17_c8748afd-12f0-48c2-b0d2-7b739256843b.png","mobile":"shopify:\/\/shop_images\/37_600_x_1000_px_3_4ed8e919-34ec-4c6e-9d36-88bd8323c293.png","link_to":"","music_link":"","song_name":"","artist_name":"","creds_color":"black","play_button_color":"#1d89ef"}},"d47d1c9c-aefd-4702-ba28-68ceb29c023d":{"type":"slide-single","settings":{"desktop":"shopify:\/\/shop_images\/No_Strings_Attached_17_c8748afd-12f0-48c2-b0d2-7b739256843b.png","mobile":"shopify:\/\/shop_images\/37_600_x_1000_px_3_4ed8e919-34ec-4c6e-9d36-88bd8323c293.png","link_to":"","music_link":"","song_name":"","artist_name":"","creds_color":"black","play_button_color":"#1d89ef"}}},"block_order":["9b92882d-9439-4fbd-94b3-28365ecc055b","d76ab0c4-f98c-4c84-9eb9-a2046cc32293","d47d1c9c-aefd-4702-ba28-68ceb29c023d"],"settings":{"slide_style":"cards"}},"featured_collection":{"type":"featured-collection","settings":{"title":"","heading_size":"h1","description":"","show_description":false,"description_style":"body","collection":"all","products_to_show":8,"columns_desktop":4,"full_width":false,"show_view_all":false,"view_all_style":"solid","enable_desktop_slider":false,"color_scheme":"background-1","image_ratio":"adapt","image_shape":"default","show_secondary_image":true,"show_vendor":false,"show_rating":true,"enable_quick_add":false,"columns_mobile":"2","swipe_on_mobile":false,"padding_top":8,"padding_bottom":4}}},"order":["ig-slider","hero-slider","featured_collection"]}
+{
+  "sections": {
+    "ig-slider": {
+      "type": "ig-slider",
+      "blocks": {
+        "04c6c3b9-34f9-4958-bf57-bb6158c6ce78": {
+          "type": "product_item",
+          "settings": {
+            "title": "Product Title",
+            "url": "",
+            "tag": "sale",
+            "tag_color": "#ef1d68"
+          }
+        },
+        "635ad0db-854a-48bf-94b8-da06bf2f0642": {
+          "type": "product_item",
+          "settings": {
+            "title": "Product Title",
+            "url": "",
+            "tag": "new",
+            "tag_color": "#ef1d68"
+          }
+        },
+        "94fd54e7-ef92-46e1-ba57-d5c14b4cd17a": {
+          "type": "product_item",
+          "settings": {
+            "title": "Product Title",
+            "url": "",
+            "tag": "no_tag",
+            "tag_color": "#1d89ef"
+          }
+        },
+        "ac6d7259-5d5b-4919-ae2b-e2c5d38439c5": {
+          "type": "product_item",
+          "settings": {
+            "title": "Product Title",
+            "url": "",
+            "tag": "no_tag",
+            "tag_color": "#1d89ef"
+          }
+        },
+        "cea94c5f-9c30-4567-b90d-46ff76318159": {
+          "type": "product_item",
+          "settings": {
+            "title": "Product Title",
+            "url": "",
+            "tag": "no_tag",
+            "tag_color": "#1d89ef"
+          }
+        }
+      },
+      "block_order": [
+        "04c6c3b9-34f9-4958-bf57-bb6158c6ce78",
+        "635ad0db-854a-48bf-94b8-da06bf2f0642",
+        "94fd54e7-ef92-46e1-ba57-d5c14b4cd17a",
+        "ac6d7259-5d5b-4919-ae2b-e2c5d38439c5",
+        "cea94c5f-9c30-4567-b90d-46ff76318159"
+      ],
+      "settings": {
+        "border_color": "#ef1d68"
+      }
+    },
+    "hero-slider": {
+      "type": "hero-slider",
+      "blocks": {
+        "9b92882d-9439-4fbd-94b3-28365ecc055b": {
+          "type": "slide-single",
+          "settings": {
+            "link_to": "",
+            "music_link": "",
+            "song_name": "",
+            "artist_name": "",
+            "creds_color": "black",
+            "play_button_color": "#1d89ef"
+          }
+        },
+        "d76ab0c4-f98c-4c84-9eb9-a2046cc32293": {
+          "type": "slide-single",
+          "settings": {
+            "link_to": "",
+            "music_link": "",
+            "song_name": "",
+            "artist_name": "",
+            "creds_color": "black",
+            "play_button_color": "#1d89ef"
+          }
+        },
+        "d47d1c9c-aefd-4702-ba28-68ceb29c023d": {
+          "type": "slide-single",
+          "settings": {
+            "link_to": "",
+            "music_link": "",
+            "song_name": "",
+            "artist_name": "",
+            "creds_color": "black",
+            "play_button_color": "#1d89ef"
+          }
+        }
+      },
+      "block_order": [
+        "9b92882d-9439-4fbd-94b3-28365ecc055b",
+        "d76ab0c4-f98c-4c84-9eb9-a2046cc32293",
+        "d47d1c9c-aefd-4702-ba28-68ceb29c023d"
+      ],
+      "settings": {
+        "slide_style": "cards"
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "<strong>Featured Promo<\/strong>",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "all",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "background-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": true,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 8,
+        "padding_bottom": 4
+      }
+    }
+  },
+  "order": [
+    "ig-slider",
+    "hero-slider",
+    "featured_collection"
+  ]
+}
