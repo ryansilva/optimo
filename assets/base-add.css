@@ -8,7 +8,10 @@
 }
 
 /* ATC Buttons */
-.button, .shopify-challenge__button, .customer button, button.shopify-payment-button__button--unbranded {
+.button,
+.shopify-challenge__button,
+.customer button,
+button.shopify-payment-button__button--unbranded {
     padding: 1.4rem 3rem;
     border-radius: 8px;
     font-weight: 600;
@@ -19,7 +22,9 @@
     letter-spacing: normal;
 }
 
-.button, .shopify-challenge__button, .customer button {
+.button,
+.shopify-challenge__button,
+.customer button {
     padding: 1.4rem 3rem;
     border-radius: 8px;
     font-weight: 600;
@@ -33,48 +38,50 @@
 /* Define the keyframes for the pulsing effect */
 @keyframes pulse {
     0% {
-      transform: scale(1);
-      opacity: .75;
+        transform: scale(1);
+        opacity: .75;
     }
+
     50% {
-      transform: scale(1.1);
-      opacity: 1;
+        transform: scale(1.1);
+        opacity: 1;
     }
+
     100% {
-      transform: scale(1);
-      opacity: .75;
+        transform: scale(1);
+        opacity: .75;
     }
-  }
-  
+}
+
 
 .product__inventory svg {
     animation: pulse 1.8s infinite ease-in-out;
 }
 
 .product__description strong {
-    font-size: 1.2rem!important;
-    line-height: normal!important;
-    letter-spacing: normal!important;
-    font-weight: 600!important;
-    letter-spacing: normal!important;
-    font-family: Inter, sans-serif!important;
+    font-size: 1.2rem !important;
+    line-height: normal !important;
+    letter-spacing: normal !important;
+    font-weight: 600 !important;
+    letter-spacing: normal !important;
+    font-family: Inter, sans-serif !important;
 }
 
 .product__description li {
-    font-size: 1.2rem!important;
-    line-height: normal!important;
-    letter-spacing: normal!important;
-    letter-spacing: normal!important;
-    font-family: Inter, sans-serif!important;
+    font-size: 1.2rem !important;
+    line-height: normal !important;
+    letter-spacing: normal !important;
+    letter-spacing: normal !important;
+    font-family: Inter, sans-serif !important;
     list-style-type: '•';
 }
 
-.product__description li > * {
+.product__description li>* {
     display: inline;
 }
 
 .product__description ul {
-    padding-left:0!important;
+    padding-left: 0 !important;
 }
 
 .product__description {
@@ -82,13 +89,20 @@
 }
 
 .product__description h4 {
-    margin:0!important;
+    margin: 0 !important;
 }
 
 .product__description strong {
-    font-weight: 600!important;
+    font-weight: 600 !important;
 }
 
 .product__description p {
     font-size: 12px;
+}
+
+@media screen and (max-width: 749px) {
+
+    .banner--mobile-bottom:not(.banner--stacked) .banner__box.color-background-1 {
+        padding-bottom: 0;
+    }
 }
