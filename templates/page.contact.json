@@ -1,1 +1,64 @@
-{"sections":{"main":{"type":"main-page","settings":{"padding_top":36,"padding_bottom":36}},"form":{"type":"contact-form","settings":{"heading":"","heading_size":"h1","color_scheme":"background-1","padding_top":36,"padding_bottom":36}}},"order":["main","form"]}
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "hide_title": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "2fda217e-ba94-49d9-84f4-90a67f34ed38": {
+      "type": "image-banner",
+      "blocks": {
+        "template--21717383217462__2fda217e-ba94-49d9-84f4-90a67f34ed38-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "Contact Us"
+          }
+        },
+        "template--21717383217462__2fda217e-ba94-49d9-84f4-90a67f34ed38-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "Give customers details about the banner image(s) or content on the template."
+          }
+        },
+        "template--21717383217462__2fda217e-ba94-49d9-84f4-90a67f34ed38-buttons-1": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Button label",
+            "button_link_1": "",
+            "button_label_2": "Button label",
+            "button_link_2": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--21717383217462__2fda217e-ba94-49d9-84f4-90a67f34ed38-heading-1",
+        "template--21717383217462__2fda217e-ba94-49d9-84f4-90a67f34ed38-text-1",
+        "template--21717383217462__2fda217e-ba94-49d9-84f4-90a67f34ed38-buttons-1"
+      ],
+      "settings": {
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "form": {
+      "type": "contact-form",
+      "settings": {
+        "heading": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "2fda217e-ba94-49d9-84f4-90a67f34ed38",
+    "form"
+  ]
+}
