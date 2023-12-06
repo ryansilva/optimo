@@ -29,13 +29,11 @@
         "template--21717383217462__2fda217e-ba94-49d9-84f4-90a67f34ed38-text-1"
       ],
       "settings": {
-        "image_overlay_opacity": 0,
-        "image_height": "medium",
+        "image": "shopify:\/\/shop_images\/Shop_Page_Banner_13_1.png",
         "desktop_content_position": "middle-center",
         "show_text_box": true,
         "desktop_content_alignment": "center",
         "mobile_content_alignment": "center",
-        "stack_images_on_mobile": true,
         "show_text_below": true
       }
     },
