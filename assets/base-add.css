@@ -109,7 +109,6 @@ button.shopify-payment-button__button--unbranded {
     font-size: 1.4rem;
     font-weight: 500;
     top: calc(1.2rem + var(--inputs-border-width));
-    color: rgb(var(--color-foreground));
 }
 
 .accordion__title {
@@ -123,7 +122,6 @@ button.shopify-payment-button__button--unbranded {
 
 body {
     line-height: 1.4;
-    color: rgb(var(--color-foreground)) !important;
 }
 
 @media screen and (max-width: 749px) {
