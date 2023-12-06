@@ -118,7 +118,7 @@ button.shopify-payment-button__button--unbranded {
 }
 
 .rich-text__blocks {
-    max-width: 100%;
+    max-width: 100% !important;
 }
 
 @media screen and (max-width: 749px) {
