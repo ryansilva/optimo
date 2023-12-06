@@ -38,7 +38,7 @@
         "template--21717529788726__040393da-e50d-4b46-9f13-ef50af595233-text-1": {
           "type": "text",
           "settings": {
-            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ante nisi, lobortis id eleifend at, feugiat eget ipsum. Aliquam auctor quis est sed ultricies. Sed lacus metus, pulvinar non tincidunt sit amet, feugiat in metus. Phasellus sed nulla purus. Sed vestibulum, tortor quis egestas malesuada, lorem libero tincidunt urna, nec sollicitudin purus nisi sit amet neque. In quis ornare augue. Sed nunc est, ultrices a lectus vel, cursus ultrices nibh. Nunc tincidunt dui sed elit tempor porttitor.<\/p><p>Morbi commodo porttitor nulla, a blandit turpis sollicitudin non. Nulla placerat enim eu sem feugiat, et luctus libero scelerisque. Mauris posuere rutrum ligula, quis consequat justo sollicitudin vitae. Maecenas bibendum velit ac arcu lobortis vehicula. Morbi placerat, odio eu tristique imperdiet, ipsum metus lacinia tortor, quis pretium nibh ligula vestibulum magna. Sed gravida pulvinar ullamcorper. Ut dapibus lectus ante, vitae fermentum est ultricies in. Phasellus faucibus mauris id ante pretium, vel molestie elit finibus.<\/p><p>Phasellus velit leo, porta nec convallis sed, tincidunt vitae felis. Nulla accumsan purus sit amet augue faucibus, sed varius dui semper. Quisque bibendum mi eget mauris tempor, eget bibendum neque eleifend. Nulla eu luctus sem, et accumsan neque. Curabitur elit nunc, vehicula non cursus vitae, eleifend ut ante. Nullam at tellus sit amet neque vehicula faucibus ut id massa. Aliquam efficitur tellus id risus pharetra, ut eleifend est maximus. Aenean lacinia mollis sollicitudin.<\/p><p>Maecenas feugiat massa volutpat semper accumsan. Duis sed erat sed risus ultricies facilisis vitae et est. Fusce in massa vel orci imperdiet aliquam. Nulla non molestie libero. Aenean porttitor mollis erat vitae vehicula. Integer ante elit, auctor vitae varius eu, laoreet quis purus. Donec ultrices nunc blandit erat convallis suscipit. Donec cursus eget sapien sit amet faucibus. Etiam sed posuere leo. Integer ornare massa sit amet scelerisque pretium. Proin hendrerit risus risus, eu gravida mauris aliquam id. Proin vulputate augue quis aliquam sodales. Donec scelerisque enim congue enim aliquam ullamcorper. Sed euismod aliquet sollicitudin.<\/p><p>Curabitur feugiat ipsum a libero fringilla, eget laoreet arcu gravida. Vivamus faucibus purus arcu, quis mattis libero semper nec. Quisque nisi ex, porttitor ut erat malesuada, porttitor scelerisque enim. Nullam laoreet est odio, ac aliquet dui auctor a. Vivamus dignissim luctus sem vitae lacinia. Ut scelerisque vel turpis id dictum. Etiam nec nisi justo. Cras eget lacus imperdiet, maximus sem vitae, commodo neque.<\/p>"
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ante nisi, lobortis id eleifend at, feugiat eget ipsum. Aliquam auctor quis est sed ultricies. <\/p><p>Sed lacus metus, pulvinar non tincidunt sit amet, feugiat in metus. Phasellus sed nulla purus. <\/p><p>Sed vestibulum, tortor quis egestas malesuada, lorem libero tincidunt urna, nec sollicitudin purus nisi sit amet neque. <\/p><p>In quis ornare augue. Sed nunc est, ultrices a lectus vel, cursus ultrices nibh. Nunc tincidunt dui sed elit tempor porttitor.<\/p><p><\/p>"
           }
         }
       },
@@ -46,8 +46,8 @@
         "template--21717529788726__040393da-e50d-4b46-9f13-ef50af595233-text-1"
       ],
       "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center"
+        "desktop_content_position": "left",
+        "content_alignment": "left"
       }
     },
     "dd5c6b03-f4b6-49bc-bea2-3b30d9d1c15d": {
