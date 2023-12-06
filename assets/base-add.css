@@ -123,7 +123,7 @@ button.shopify-payment-button__button--unbranded {
 
 body {
     line-height: 1.4;
-    color: rgb(var(--color-foreground));
+    color: rgb(var(--color-foreground)) !important;
 }
 
 @media screen and (max-width: 749px) {
