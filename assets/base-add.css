@@ -112,6 +112,11 @@ button.shopify-payment-button__button--unbranded {
     color: rgb(var(--color-foreground));
 }
 
+.accordion__title {
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
 @media screen and (max-width: 749px) {
 
     .banner--mobile-bottom:not(.banner--stacked) .banner__box.color-background-1 {
