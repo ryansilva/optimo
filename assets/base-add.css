@@ -129,4 +129,9 @@ body {
     .banner--mobile-bottom:not(.banner--stacked) .banner__box.color-background-1 {
         padding-bottom: 0;
     }
+
+    .image-with-text__content {
+        padding-left: 0;
+        padding-right: 0;
+    }
 }
