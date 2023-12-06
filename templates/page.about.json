@@ -129,6 +129,39 @@
         "desktop_content_position": "top",
         "desktop_content_alignment": "left"
       }
+    },
+    "275089d4-6fe2-46cc-9422-fe1a7c1a513c": {
+      "type": "collage",
+      "blocks": {
+        "template--15115716264071__275089d4-6fe2-46cc-9422-fe1a7c1a513c-image-1": {
+          "type": "image",
+          "settings": {
+          }
+        },
+        "template--15115716264071__275089d4-6fe2-46cc-9422-fe1a7c1a513c-product-1": {
+          "type": "product",
+          "settings": {
+            "product": "",
+            "second_image": false
+          }
+        },
+        "template--15115716264071__275089d4-6fe2-46cc-9422-fe1a7c1a513c-collection-1": {
+          "type": "collection",
+          "settings": {
+            "collection": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--15115716264071__275089d4-6fe2-46cc-9422-fe1a7c1a513c-image-1",
+        "template--15115716264071__275089d4-6fe2-46cc-9422-fe1a7c1a513c-product-1",
+        "template--15115716264071__275089d4-6fe2-46cc-9422-fe1a7c1a513c-collection-1"
+      ],
+      "settings": {
+        "heading": "Multimedia collage",
+        "desktop_layout": "left",
+        "mobile_layout": "column"
+      }
     }
   },
   "order": [
@@ -137,6 +170,7 @@
     "040393da-e50d-4b46-9f13-ef50af595233",
     "dd5c6b03-f4b6-49bc-bea2-3b30d9d1c15d",
     "671381b4-1b06-49b6-a34c-559539b3661e",
-    "23ab5855-8395-4267-8401-d51d6cf5f624"
+    "23ab5855-8395-4267-8401-d51d6cf5f624",
+    "275089d4-6fe2-46cc-9422-fe1a7c1a513c"
   ]
 }
