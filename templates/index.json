@@ -64,33 +64,35 @@
     "hero-slider": {
       "type": "hero-slider",
       "blocks": {
-        "9b92882d-9439-4fbd-94b3-28365ecc055b": {
+        "d76ab0c4-f98c-4c84-9eb9-a2046cc32293": {
           "type": "slide-single",
           "settings": {
             "desktop": "shopify:\/\/shop_images\/No_Strings_Attached_19.png",
             "mobile": "shopify:\/\/shop_images\/Apply_To_Work_With_Us_17.png",
-            "link_to": "",
+            "link_to": "https:\/\/form.typeform.com\/to\/EAbPksJJ",
             "music_link": "",
-            "song_name": "",
-            "artist_name": "",
+            "song_name": "Mannie Fresh",
+            "artist_name": "Real Big",
             "creds_color": "white",
-            "play_button_color": "#1d89ef"
+            "play_button_color": "#fe0000"
           }
         },
-        "d76ab0c4-f98c-4c84-9eb9-a2046cc32293": {
+        "ae909883-84a9-48cd-8835-c8b988ee3841": {
           "type": "slide-single",
           "settings": {
-            "link_to": "",
+            "mobile": "shopify:\/\/shop_images\/Apply_To_Work_With_Us_1.png",
+            "link_to": "https:\/\/m7wygle158o.typeform.com\/to\/EAbPksJJ",
             "music_link": "",
             "song_name": "",
             "artist_name": "",
             "creds_color": "black",
-            "play_button_color": "#1d89ef"
+            "play_button_color": "#feac00"
           }
         },
-        "d47d1c9c-aefd-4702-ba28-68ceb29c023d": {
+        "9b92882d-9439-4fbd-94b3-28365ecc055b": {
           "type": "slide-single",
           "settings": {
+            "mobile": "shopify:\/\/shop_images\/37_600_x_1000_px_15.png",
             "link_to": "",
             "music_link": "",
             "song_name": "",
@@ -101,9 +103,9 @@
         }
       },
       "block_order": [
-        "9b92882d-9439-4fbd-94b3-28365ecc055b",
         "d76ab0c4-f98c-4c84-9eb9-a2046cc32293",
-        "d47d1c9c-aefd-4702-ba28-68ceb29c023d"
+        "ae909883-84a9-48cd-8835-c8b988ee3841",
+        "9b92882d-9439-4fbd-94b3-28365ecc055b"
       ],
       "settings": {
         "slide_style": "fw"
