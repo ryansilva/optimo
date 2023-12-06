@@ -100,6 +100,10 @@ button.shopify-payment-button__button--unbranded {
     font-size: 12px;
 }
 
+.no-header-content~.collapsible-content__grid .accordion {
+    margin-top: 0;
+}
+
 @media screen and (max-width: 749px) {
 
     .banner--mobile-bottom:not(.banner--stacked) .banner__box.color-background-1 {

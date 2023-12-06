@@ -20,7 +20,7 @@
     <div class="collapsible-content__wrapper section-{{ section.id }}-padding">
       <div class="{% if section.settings.image == blank %}collapsible-content-wrapper-narrow{% else %}page-width{% endif %}">
         <div
-          class="collapsible-content__header scroll-trigger animate--slide-in"
+          class="collapsible-content__header scroll-trigger animate--slide-in{% if section.settings.caption == blank and section.settings.heading == blank %} no-header-content{% endif %}"
           style="text-align: {{ section.settings.heading_alignment }};"
         >
           {%- if section.settings.caption != blank -%}
