@@ -117,6 +117,10 @@ button.shopify-payment-button__button--unbranded {
     font-weight: 600;
 }
 
+.rich-text__blocks {
+    max-width: 100%;
+}
+
 @media screen and (max-width: 749px) {
 
     .banner--mobile-bottom:not(.banner--stacked) .banner__box.color-background-1 {
