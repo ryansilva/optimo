@@ -16,7 +16,7 @@
 
 <div class="isolate">
   <div class="rich-text content-container color-background-1 gradient rich-text--full-width content-container--full-width section-{{ section.id }}-padding">
-    <div class="rich-text__wrapper rich-text__wrapper--{{ section.settings.desktop_content_position }}">
+    <div class="rich-text__wrapper rich-text__wrapper--{{ section.settings.desktop_content_position }} page-width">
       <div class="rich-text__blocks {{ section.settings.content_alignment }}">
         {%- for block in section.blocks -%}
           {%- case block.type -%}
