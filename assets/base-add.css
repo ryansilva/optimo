@@ -124,6 +124,12 @@ body {
     line-height: 1.4;
 }
 
+@media screen and (min-width: 601px) {
+    .hide-tablet-up {
+        display: none;
+    }
+}
+
 @media screen and (max-width: 749px) {
 
     .banner--mobile-bottom:not(.banner--stacked) .banner__box.color-background-1 {
@@ -134,5 +140,11 @@ body {
         padding-left: 0 !important;
         padding-right: 0 !important;
         padding-bottom: 0 !important;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .hide-mobile {
+        display: none;
     }
 }
