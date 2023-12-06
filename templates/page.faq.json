@@ -14,7 +14,7 @@
         "template--21717390360886__3f9bd1ab-fb69-4e61-9297-38149bb38847-heading-1": {
           "type": "heading",
           "settings": {
-            "heading": "FAQ"
+            "heading": "FAQ's"
           }
         }
       },
@@ -80,7 +80,7 @@
       ],
       "settings": {
         "caption": "",
-        "heading": "Collapsible content",
+        "heading": "",
         "heading_alignment": "center",
         "desktop_layout": "image_second"
       }
